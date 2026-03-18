@@ -6,6 +6,7 @@ import path from "path";
 import { fileURLToPath } from "url";
 import registrationRouter from "./src/routes/registration.js";
 import adminRouter from "./src/routes/admin.js";
+import permissionRouter from "./src/routes/permissionLetter.js";
 
 dotenv.config();
 
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 app.use("/api", registrationRouter);
+app.use("/api", permissionRouter);
 app.use("/admin", adminRouter);
 
 app.get("/", (_req, res) => res.json({ message: "ECLECTICA 2K26 API ✅" }));
