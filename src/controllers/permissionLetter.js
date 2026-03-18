@@ -35,6 +35,13 @@ export const generatePermissionLetter = async (req, res) => {
         message: "No registration found for this roll number and event. Please check and try again.",
       });
     }
+    if(event == "debate" || event == "Debate"){
+        return res.status(400).json({
+            success: false,
+            message: "Permission letters was provided on the event day for the debate event. Please contact the coordinators if you have any queries.",
+            });
+
+    }
 
     // Generate QR code as base64 PNG
     const qrData = JSON.stringify({
