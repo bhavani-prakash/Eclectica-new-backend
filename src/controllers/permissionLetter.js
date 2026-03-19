@@ -38,7 +38,7 @@ export const generatePermissionLetter = async (req, res) => {
     if(event == "debate" || event == "Debate"){
         return res.status(400).json({
             success: false,
-            message: "Permission letters was provided on the event day for the debate event. Please contact the coordinators if you have any queries.",
+            message: "We can't provide the permission letter for the debate event. We provide that on the event day. Please contact event coordinators for any queries.",
             });
 
     }
